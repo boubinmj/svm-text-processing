@@ -11,12 +11,10 @@ def write_file(outputfile, inputfile):
     		readCSV = csv.reader(csvfile, delimiter=',')
     		for row in readCSV:
 			if (int(float(row[0])) >= boundary_min and int(float(row[0])) <= boundary_max):
-				output_file.write('-1 ')
+				output_file.write('+1 ')
         			output_file.write('1:')
-				output_file.write(row[0])
-				output_file.write(' 2:')
 				output_file.write(row[1])
-				output_file.write(' 3:')
+				output_file.write(' 2:')
 				output_file.write(row[3])
 				output_file.write('\n')
 	output_file.close()
