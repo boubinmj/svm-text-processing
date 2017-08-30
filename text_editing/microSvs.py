@@ -6,13 +6,17 @@ boundary_min = 150
 boundary_max = 400
 
 def write_file(outputfile, inputfile):
-	output_file = open(outputfile, 'w')
-	with open(inputfile) as csvfile:
-    		readCSV = csv.reader(csvfile, delimiter=' ')
-    		for row in readCSV:
-			if (int(float(row[0])) >= boundary_min and int(float(row[0])) <= boundary_max):
-        			output_file.write(row[0])
-				output_file.write(',')
+	input_file = open(inputfile, 'r')
+	output_file = open(outputfile, 'a')
+	content = []
+	line = input_file.readlines()
+	for i in line:
+		content.append(i.split(' ')[0])
+	for c in content:
+		output_file.write(c)
+		output_file.write(", ")
+		print(c)
+	print(len(content))
 	output_file.close()
 
 def main(argv):
