@@ -11,7 +11,8 @@ def write_file(outputfile, inputfile):
 	content = []
 	line = input_file.readlines()
 	for i in line:
-		content.append(i.split(' ')[0])
+		content.append(i.split(' ')[1].split(':')[1])
+		content.append(i.split(' ')[2].split(':')[1])
 	for c in content:
 		output_file.write(c)
 		output_file.write(", ")
