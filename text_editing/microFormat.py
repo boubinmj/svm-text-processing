@@ -2,8 +2,6 @@ import csv
 import sys, getopt
 
 out = 'AL1.txt'
-boundary_min = 150 
-boundary_max = 400
 
 def write_file(outputfile, inputfile):
 	output_file = open(outputfile, 'a')
